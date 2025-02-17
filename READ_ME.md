@@ -22,7 +22,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/GeorgeMorev/Sprint_5
    cd stellar-burgers-test-automation
    
 2. Создайте виртуальное окружение:
