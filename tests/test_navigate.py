@@ -1,4 +1,5 @@
 import pytest
+import urls
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import locators
@@ -7,7 +8,7 @@ from selenium.webdriver.common.by import By
 
 def test_navigate_to_personal_account(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -29,7 +30,7 @@ def test_navigate_to_personal_account(driver, sign_in_user):
 
 def test_navigate_to_constructor_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -52,7 +53,7 @@ def test_navigate_to_constructor_button(driver, sign_in_user):
 
 def test_navigate_to_logo_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -76,7 +77,7 @@ def test_navigate_to_logo_button(driver, sign_in_user):
 def test_navigate_to_activate_sause_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
 
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -98,7 +99,7 @@ def test_navigate_to_activate_sause_button(driver, sign_in_user):
 def test_navigate_to_activate_bread_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
 
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -120,7 +121,7 @@ def test_navigate_to_activate_bread_button(driver, sign_in_user):
 def test_navigate_to_activate_topping_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
 
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
