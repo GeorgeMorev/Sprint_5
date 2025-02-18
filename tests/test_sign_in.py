@@ -4,10 +4,12 @@ from selenium.webdriver.support import expected_conditions
 import locators
 from selenium.webdriver.common.by import By
 
+import urls
+
 
 def test_log_in_from_main_page(driver, registrate_new_user, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON)))
     driver.find_element(By.XPATH, locators.Locators.MAIN_LOGIN_BUTTON).click()
@@ -22,7 +24,7 @@ def test_log_in_from_main_page(driver, registrate_new_user, sign_in_user):
 
 def test_log_in_via_personal_account_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(urls.Urls.MAIN_PAGE)
     WebDriverWait(driver, 10).until(
         (expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.PERSONAL_ACCOUNT_BUTTON))))
     driver.find_element(By.XPATH, locators.Locators.PERSONAL_ACCOUNT_BUTTON).click()
@@ -39,7 +41,7 @@ def test_log_in_via_personal_account_button(driver, sign_in_user):
 
 def test_log_in_via_register_page_button(driver, sign_in_user):
     email, password = 'Robopolk_3907@mail.ru', 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/register")
+    driver.get(urls.Urls.REGISTER_PAGE)
     driver.find_element(By.XPATH, locators.Locators.SIGN_IN_BUTTON_REGISTRATION_PAGE).click()
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.SIGN_IN_BUTTON_LOG_IN_PAGE)))
@@ -55,7 +57,7 @@ def test_log_in_via_register_page_button(driver, sign_in_user):
 def test_log_in_via_password_repair_page_button(driver, sign_in_user):
     email = 'Robopolk_3907@mail.ru'
     password = 'xndYtW'
-    driver.get("https://stellarburgers.nomoreparties.site/forgot-password")
+    driver.get(urls.Urls.FORGOT_PASSWORD_PAGE)
     driver.find_element(By.XPATH, locators.Locators.SIGN_IN_BUTTON_REGISTRATION_PAGE).click()
     WebDriverWait(driver, 10).until(
         expected_conditions.visibility_of_element_located((By.XPATH, locators.Locators.SIGN_IN_BUTTON_LOG_IN_PAGE)))
